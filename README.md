@@ -1,8 +1,4 @@
-# revindexToCTBC
-This is a simple approach based on .NET 6.
-can use 
-```
-curl -X POST http://XXXX.com/api/Payment/ProcessPayment ^
--H "Content-Type: application/x-www-form-urlencoded" ^
--d "Amount=12.78&BillingCity=Taipei&BillingCountryCode=TW"
-```
+目前的交易流程
+1️⃣ 官網端發送請求：當使用者發起交易時，系統會將訂單資訊傳送至我們的 ProcessTransaction API。
+2️⃣ 交易資訊加密：在 ProcessTransaction 端，我們會對訂單資訊進行加密處理，目前為方便測試，我們僅填入基本資訊。
+3️⃣ 轉送至貴公司支付頁面：我們將加密後的交易資訊 (URLEnc) 傳遞至貴公司的 SSLAuthUI.jsp URL，並讓用戶自動跳轉至支付頁面。
